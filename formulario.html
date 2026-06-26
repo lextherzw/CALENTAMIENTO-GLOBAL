@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario - Calentamiento Global</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .pagina-formulario {
+            background: #f3e8ff;
+            min-height: 80vh;
+            padding: 40px 0;
+        }
+        .pagina-formulario h2 {
+            color: #4a1a6b;
+            font-size: 1.8em;
+            border-bottom: 3px solid #8a4fb3;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .form-completo {
+            background: #fff;
+            border: 1px solid #c79de0;
+            border-radius: 10px;
+            padding: 35px 40px;
+            box-shadow: 0 4px 15px rgba(74,26,107,0.10);
+        }
+        .form-grupo {
+            margin-bottom: 20px;
+        }
+        .form-grupo label {
+            display: block;
+            color: #4a1a6b;
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .form-grupo input[type="text"],
+        .form-grupo input[type="email"],
+        .form-grupo input[type="number"],
+        .form-grupo select,
+        .form-grupo textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #c79de0;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-family: arial, helvetica, sans-serif;
+            color: #333;
+            background: #faf5ff;
+            box-sizing: border-box;
+        }
+        .form-grupo input:focus,
+        .form-grupo select:focus,
+        .form-grupo textarea:focus {
+            outline: none;
+            border-color: #7b2fbe;
+            box-shadow: 0 0 6px rgba(123,47,190,0.25);
+        }
+        .form-grupo textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-fila {
+            display: flex;
+            gap: 20px;
+        }
+        .form-fila .form-grupo {
+            flex: 1;
+        }
+        .form-grupo-radio label.opcion {
+            font-weight: normal;
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .form-grupo-radio input[type="radio"],
+        .form-grupo-check input[type="checkbox"] {
+            accent-color: #7b2fbe;
+            margin-right: 6px;
+        }
+        .form-grupo-check label.opcion {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+        .separador {
+            border: none;
+            border-top: 2px solid #e0c6f5;
+            margin: 28px 0;
+        }
+        .seccion-titulo {
+            color: #7b2fbe;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            margin-top: 0;
+        }
+        .btn-enviar {
+            display: inline-block;
+            background: linear-gradient(to top, #7b2fbe, #4a1a6b);
+            color: #fff;
+            border: none;
+            padding: 14px 50px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #2a0845;
+            box-shadow: 0 6px 0 0 #3b0f5e;
+            cursor: pointer;
+            font-family: arial, helvetica, sans-serif;
+        }
+        .btn-enviar:hover {
+            background: linear-gradient(to top, #6e3aa0, #3b0f5e);
+            box-shadow: 0 0 20px 4px #4a1a6b;
+        }
+        .btn-volver {
+            display: inline-block;
+            color: #7b2fbe;
+            text-decoration: none;
+            font-size: 0.95em;
+            margin-left: 20px;
+            border-bottom: 1px dashed #7b2fbe;
+        }
+        .btn-volver:hover {
+            color: #4a1a6b;
+        }
+        .pie-form {
+            margin-top: 14px;
+            font-size: 0.82em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+ <header class="encabezado" role="banner">
+    <div class="contenedor">
+        <a href="index.html" class="logo">
+            <img src="imagen/logo-tierra.png" alt="logotipo Calentamiento Global">
+        </a>
+        <nav role="navigation">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </div>
+ </header>
+
+ <div class="pagina-formulario">
+    <div class="contenedor">
+        <h2>📋 Formulario: Conciencia Climática</h2>
+        <div class="form-completo">
+            <form action="#" method="post">
+
+                <!-- DATOS PERSONALES -->
+                <p class="seccion-titulo">👤 Datos personales</p>
+                <div class="form-fila">
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana García López" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="edad">Edad *</label>
+                        <input type="number" id="edad" name="edad" min="10" max="100" placeholder="Ej. 20" required>
+                    </div>
+                </div>
+                <div class="form-fila">
+                    <div class="form-grupo">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="pais">País de residencia</label>
+                        <select id="pais" name="pais">
+                            <option value="">-- Selecciona --</option>
+                            <option value="mx">México</option>
+                            <option value="ar">Argentina</option>
+                            <option value="co">Colombia</option>
+                            <option value="es">España</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="separador">
+
+                <!-- CONOCIMIENTO DEL TEMA -->
+                <p class="seccion-titulo">🌍 Tu conocimiento sobre el calentamiento global</p>
+                <div class="form-grupo">
+                    <label>¿Qué tan informado/a te consideras sobre el calentamiento global? *</label>
+                    <div class="form-grupo-radio">
+                        <label class="opcion"><input type="radio" name="nivel" value="poco" required> Poco informado/a</label>
+                        <label class="opcion"><input type="radio" name="nivel" value="medio"> Medianamente informado/a</label>
+                        <label class="opcion"><input type="radio" name="nivel" value="mucho"> Muy informado/a</label>
+                    </div>
+                </div>
+                <div class="form-grupo">
+                    <label for="fuente">¿Dónde te informas principalmente sobre el medio ambiente?</label>
+                    <select id="fuente" name="fuente">
+                        <option value="">-- Selecciona --</option>
+                        <option value="redes">Redes sociales</option>
+                        <option value="noticias">Portales de noticias</option>
+                        <option value="escuela">Escuela / Universidad</option>
+                        <option value="documentales">Documentales</option>
+                        <option value="libros">Libros / Revistas científicas</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <hr class="separador">
+
+                <!-- HÁBITOS -->
+                <p class="seccion-titulo">♻️ Tus hábitos ambientales</p>
+                <div class="form-grupo form-grupo-check">
+                    <label>¿Cuáles de estas acciones practicas actualmente? (puedes marcar varias)</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="reciclaje"> Reciclo basura en casa</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="transporte"> Uso transporte público o bicicleta</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="agua"> Ahorro agua en el hogar</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="energia"> Apago luces y desconecto aparatos que no uso</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="dieta"> Reduje mi consumo de carne</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="plantas"> Tengo plantas o participo en reforestación</label>
+                    <label class="opcion"><input type="checkbox" name="habitos" value="ninguno"> Ninguna de las anteriores por ahora</label>
+                </div>
+
+                <hr class="separador">
+
+                <!-- OPINIÓN -->
+                <p class="seccion-titulo">💬 Tu opinión</p>
+                <div class="form-grupo">
+                    <label>¿Crees que el calentamiento global es una emergencia que requiere acción inmediata? *</label>
+                    <div class="form-grupo-radio">
+                        <label class="opcion"><input type="radio" name="urgencia" value="si" required> Sí, es urgente</label>
+                        <label class="opcion"><input type="radio" name="urgencia" value="parcial"> Parcialmente</label>
+                        <label class="opcion"><input type="radio" name="urgencia" value="no"> No lo creo</label>
+                    </div>
+                </div>
+                <div class="form-grupo">
+                    <label for="comentario">¿Qué acción crees que es la más importante para combatir el calentamiento global?</label>
+                    <textarea id="comentario" name="comentario" placeholder="Escribe tu opinión aquí..."></textarea>
+                </div>
+
+                <hr class="separador">
+
+                <!-- ENVÍO -->
+                <button type="submit" class="btn-enviar">Enviar formulario</button>
+                <a href="index.html" class="btn-volver">← Volver al inicio</a>
+                <p class="pie-form">* Campos obligatorios. Tu información es confidencial y se usará únicamente con fines educativos.</p>
+
+            </form>
+        </div>
+    </div>
+ </div>
+
+ <footer class="piedepagina" role="contentinfo">
+    <div class="contenedor">
+        <small>Copyright @ 2026 Calentamiento Global</small>
+        <nav>
+            <ul>
+                <li><a href="politicas.html">Políticas del sitio</a></li>
+                <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                <li><a href="mapa.html">Mapa del sitio</a></li>
+            </ul>
+        </nav>
+    </div>
+ </footer>
+
+ <div class="social">
+    <a href="https://www.facebook.com" target="_blank" title="FaceBook"><img src="imagen/face.jpg" alt="facebook"></a>
+    <a href="https://www.youtube.com" target="_blank" title="Youtube"><img src="imagen/you.jpg" alt="youtube"></a>
+    <a href="https://www.x.com" target="_blank" title="X (Twitter)"><img src="imagen/twit.jpg" alt="twitter"></a>
+ </div>
+
+</body>
+</html>
